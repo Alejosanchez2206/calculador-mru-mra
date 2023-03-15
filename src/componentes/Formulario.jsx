@@ -8,7 +8,7 @@ export default function Formulario({ mensaje }) {
 
     return (
         <div className="md:w-1/2 lg:w-2/5 rounded-lg">
-            <h2 className="font-black text-3xl text-center uppercase">Ingreses los datos</h2>
+            <h2 className="font-black text-3xl text-center uppercase">Ingresa los datos</h2>
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5">
                 <div className="mb-5">
                     <label
