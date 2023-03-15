@@ -1,4 +1,4 @@
-import React from 'react'
+import { MathComponent } from "mathjax-react";
 
 export default function Resultado({ mensaje }) {
   return (
@@ -13,7 +13,7 @@ export default function Resultado({ mensaje }) {
         <label
           className="block text-blue-700 uppercase font-bold text-xl ml-3"
         >
-          1 Seg
+          <MathComponent tex={String.raw`1 Seg`}/>
         </label>
         <label
           className="block text-gray-700 uppercase font-bold"
@@ -21,10 +21,23 @@ export default function Resultado({ mensaje }) {
           Y se obtuvo la aceleracion
         </label>
         <label
-          className="block text-blue-700 uppercase font-bold text-xl ml-3"
-        >
-          1 Seg
+          className="block text-blue-700 uppercase font-bold text-xl ml-3" 
+          >
+          
+          <MathComponent tex={String.raw`0 m/s^2`}/>
         </label>
+        <label
+          className="block text-gray-700 uppercase font-bold mt-5"
+        >
+          PROCEDIMIENTO PARA HALLAR EL TIEMPO
+        </label>
+        <MathComponent tex={String.raw`Tiempo =\frac{2 * Distancia}{Velocidadinicial + Velocidadfinal} = \frac{2 * 1}{ 1 + 1} = 1 Seg`} />
+        <label
+          className="block text-gray-700 uppercase font-bold mt-5"
+        >
+          PROCEDIMIENTO PARA HALLAR LA ACELERACIÓN
+        </label>
+        <MathComponent tex={String.raw`Aceleracion =\frac{Velocidadinicial - Velocidadfinal}{Tiempo} = \frac{1-1}{1} = 0 m/s^2`} />
       </div>
     </div>
   )
