@@ -7,13 +7,13 @@ export default function Formulario({ mensaje }) {
     }
 
     return (
-        <div className="md:w-1/2 lg:w-2/5 rounded-lg">
+        <div className="md:w-1/2 lg:w-2/5 md:mr-8 lg:mr-6 rounded-lg">
             <h2 className="font-black text-3xl text-center uppercase">Ingresa los datos</h2>
-            <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 ">
+            <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 dark:bg-gray-900">
                 <div className="mb-5">
                     <label
                         htmlFor="Distancia"
-                        className="block text-gray-700 uppercase font-bold text-left">
+                        className="block text-gray-700 uppercase font-bold text-left dark:text-white">
                         Distancia
                     </label>
 
@@ -21,12 +21,12 @@ export default function Formulario({ mensaje }) {
                         id="Distancia"
                         type="Number"
                         placeholder="Distancia"
-                        className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full"
+                        className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full dark:bg-slate-900  dark:text-white"
                     /*  value={nombre}
                      onChange={(e) => setNombre(e.target.value)} */
                     />
                     <select
-                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full"
+                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full dark:bg-slate-900  dark:text-white"
                     >
                         <option value="km">km</option>
                         <option value="m" selected>m</option>
@@ -37,19 +37,19 @@ export default function Formulario({ mensaje }) {
                 <div className="mb-5">
                     <label
                         htmlFor="vo"
-                        className="block text-gray-700 uppercase font-bold text-left">
+                        className="block text-gray-700 uppercase font-bold text-left  dark:text-white">
                         Velocidad inicial
                     </label>
                     <input
                         id="vo"
                         type="Number"
                         placeholder="Velocidad inicial"
-                        className="sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full"
+                        className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     /*  value={nombre}
                      onChange={(e) => setNombre(e.target.value)} */
                     />
                     <select
-                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full"
+                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     >
                         <option value="km/s">km/s</option>
                         <option value="m/s" selected>m/s</option>
@@ -59,19 +59,19 @@ export default function Formulario({ mensaje }) {
                 <div className="mb-5">
                     <label
                         htmlFor="vf"
-                        className="block text-gray-700 uppercase font-bold text-left">
+                        className="block text-gray-700 uppercase font-bold text-left  dark:text-white">
                         Velocidad final
                     </label>
                     <input
                         id="vf"
                         type="Number"
                         placeholder="Velocidad final"
-                        className="sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full"
+                        className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     /*  value={nombre}
                      onChange={(e) => setNombre(e.target.value)} */
                     />
                     <select
-                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full"
+                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     >
                         <option value="km/s">km/s</option>
                         <option value="m/s" selected>m/s</option>
@@ -81,19 +81,19 @@ export default function Formulario({ mensaje }) {
                 <div className="mb-5">
                     <label
                         htmlFor="tiempo"
-                        className="block text-gray-700 uppercase font-bold text-left">
+                        className="block text-gray-700 uppercase font-bold text-left  dark:text-white">
                         Tiempo
                     </label>
                     <input
                         id="tiempo"
                         type="Number"
                         placeholder="Tiempo"
-                        className="sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full"
+                        className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     /*  value={nombre}
                      onChange={(e) => setNombre(e.target.value)} */
                     />
                     <select
-                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full"
+                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     >
                         <option value="s">s</option>
                         <option value="m" selected>m</option>
@@ -104,19 +104,19 @@ export default function Formulario({ mensaje }) {
                 <div className="mb-5">
                     <label
                         htmlFor="aceleracion"
-                        className="block text-gray-700 uppercase font-bold text-left">
+                        className="block text-gray-700 uppercase font-bold text-left  dark:text-white">
                         Aceleracion
                     </label>
                     <input
                         id="aceleracion"
                         type="Number"
                         placeholder="Aceleracion"
-                        className="sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full"
+                        className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     /*  value={nombre}
                      onChange={(e) => setNombre(e.target.value)} */
                     />
                     <select
-                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full"
+                        className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full  dark:bg-slate-900  dark:text-white"
                     >
                         <option value="m/s^2">m/s^2</option>
 
