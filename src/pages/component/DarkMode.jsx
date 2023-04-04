@@ -4,6 +4,7 @@ export default function DarkMode() {
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
     )
+    //Verficamos las prefencia del sistemas 
     const element = document.documentElement;
     const darkQuery = window.matchMedia("(prefers-color-scheme: dark)")
 
@@ -22,6 +23,7 @@ export default function DarkMode() {
         }
     ]
 
+    //Verificamos el tema del dispositivo 
     function onWindowsMatch() {
         if (localStorage.theme === 'dark' ||
             (!("theme" in localStorage) && darkQuery.matches)) {
@@ -50,6 +52,7 @@ export default function DarkMode() {
         }
     }, [theme])
 
+    //Adaptarse aytomaticamente al tema del dispositivo 
     darkQuery.addEventListener("change", (e) => {
         if (!("theme" in localStorage)) {
             if (e.matches) {
@@ -59,8 +62,9 @@ export default function DarkMode() {
             }
         }
     })
+
     return (
-        <div className="absolute top-5 right-10 duration-75 dark:bg-slate-800 bg-gry-100 rounded">
+        <div className="absolute top-20 right-10 duration-75 z-0 dark:bg-slate-800 bg-gry-100 rounded max-sm:hidden">
             {options?.map(opt => (
                 <button
                     key={opt.text}
