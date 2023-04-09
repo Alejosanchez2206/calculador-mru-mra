@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function Formulario({ mensaje }) {
+export default function Formulario({ RealizarOperaciones, clearButton, LimpiarOperaciones }) {
+
+    const [distancia, setDistancia] = useState(0)
+    const [medidasDistancia, setMedidasDistancia] = useState('km')
+    const [velocidad, setVelocidad] = useState(0)
+    const [medidadVelocidad, setMedidadVelocidad] = useState('km/s')
+    const [tiempo, setTiempo] = useState(0)
+    const [medidaTiempo, setMedidaTiempo] = useState('s')
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if (clearButton) {
+            LimpiarOperaciones()
+            setDistancia(0)
+            setVelocidad(0)
+            setTiempo(0)
+        } else {
+
+            let ObjData = {
+                'distancia': distancia,
+                'medidadDistancia': medidasDistancia,
+                'velocidad': velocidad,
+                'medidavelocidad': medidadVelocidad,
+                'tiempo': tiempo,
+                'medidatiempo': medidaTiempo
+            }
+            RealizarOperaciones(ObjData)
+        }
+
     }
 
     return (
@@ -22,11 +48,13 @@ export default function Formulario({ mensaje }) {
                         type="Number"
                         placeholder="Distancia"
                         className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full dark:bg-slate-900  dark:text-white"
-                    /*  value={nombre}
-                     onChange={(e) => setNombre(e.target.value)} */
+                        value={distancia}
+                        onChange={(e) => setDistancia(Number(e.target.value))}
                     />
                     <select
                         className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full dark:bg-slate-900  dark:text-white"
+                        value={medidasDistancia}
+                        onChange={(e) => setMedidasDistancia(e.target.value)}
                     >
                         <option value="km">km</option>
                         <option value="m" selected>m</option>
@@ -45,18 +73,20 @@ export default function Formulario({ mensaje }) {
                         type="Number"
                         placeholder="Velocidad"
                         className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full  dark:bg-slate-900  dark:text-white"
-                    /*  value={nombre}
-                     onChange={(e) => setNombre(e.target.value)} */
+                        value={velocidad}
+                        onChange={(e) => setVelocidad(Number(e.target.value))}
                     />
                     <select
                         className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full  dark:bg-slate-900  dark:text-white"
+                        value={medidadVelocidad}
+                        onChange={(e) => setMedidadVelocidad(e.target.value)}
                     >
                         <option value="km/s">km/s</option>
                         <option value="m/s" selected>m/s</option>
 
                     </select>
                 </div>
-               
+
                 <div className="mb-5">
                     <label
                         htmlFor="tiempo"
@@ -68,11 +98,13 @@ export default function Formulario({ mensaje }) {
                         type="Number"
                         placeholder="Tiempo"
                         className="border-2 sm:w-4/5 p-2 mt-2 mr-3 rounded-md max-sm:w-full  dark:bg-slate-900  dark:text-white"
-                    /*  value={nombre}
-                     onChange={(e) => setNombre(e.target.value)} */
+                        value={tiempo}
+                        onChange={(e) => setTiempo(Number(e.target.value))}
                     />
                     <select
                         className="border-2 sm:w-2/12 p-2 mt-2 rounded-md  max-sm:w-full  dark:bg-slate-900  dark:text-white"
+                        value={medidaTiempo}
+                        onChange={(e) => setMedidaTiempo(e.target.value)}
                     >
                         <option value="s">s</option>
                         <option value="m" selected>m</option>
@@ -80,11 +112,11 @@ export default function Formulario({ mensaje }) {
                     </select>
 
                 </div>
-                
+
                 <input
                     type="submit"
                     className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer"
-                    value={'CALCULAR'}
+                    value={clearButton ? 'LIMPIAR CAMPOS ' : 'CALCULAR'}
                 />
             </form>
         </div>

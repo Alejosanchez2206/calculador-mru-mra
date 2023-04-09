@@ -4,6 +4,7 @@ export default function DarkMode() {
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "system"
     )
+    
     //Verficamos las prefencia del sistemas 
     const element = document.documentElement;
     const darkQuery = window.matchMedia("(prefers-color-scheme: dark)")
@@ -52,7 +53,7 @@ export default function DarkMode() {
         }
     }, [theme])
 
-    //Adaptarse aytomaticamente al tema del dispositivo 
+    //Adaptarse automaticamente al tema del dispositivo 
     darkQuery.addEventListener("change", (e) => {
         if (!("theme" in localStorage)) {
             if (e.matches) {

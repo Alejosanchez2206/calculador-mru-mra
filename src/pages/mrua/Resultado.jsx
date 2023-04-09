@@ -1,3 +1,4 @@
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { MathComponent } from "mathjax-react";
 
 export default function Resultado({ mensaje }) {
@@ -13,7 +14,9 @@ export default function Resultado({ mensaje }) {
         <label
           className="block text-blue-700 uppercase font-bold text-xl ml-3  dark:text-white"
         >
-          <MathComponent tex={String.raw`1 Seg`} />
+          <MathComponent
+            tex={String.raw`1s`}
+          />
         </label>
         <label
           className="block text-gray-700 uppercase font-bold  dark:text-white"
@@ -23,20 +26,28 @@ export default function Resultado({ mensaje }) {
         <label
           className="block text-blue-700 uppercase font-bold text-xl ml-3  dark:text-white"
         >
-          <MathComponent tex={String.raw`0 m/s^2`} />
+          <MathComponent
+            tex={String.raw`1s`}
+          />
         </label>
         <label
           className="block text-gray-700 uppercase font-bold mt-5  dark:text-white"
         >
           PROCEDIMIENTO PARA HALLAR EL TIEMPO
         </label>
-        <MathComponent tex={String.raw`T =\frac{2 * D}{Vi + Vf} = \frac{2 * 1}{ 1 + 1} = 1 Seg`} />
+        <MathJaxContext>
+
+          <MathJax>{" V = \\(\\frac{10}{4x} \\approx 2^{12}\\)"}</MathJax>
+        </MathJaxContext>
         <label
           className="block text-gray-700 uppercase font-bold mt-5  dark:text-white"
         >
           PROCEDIMIENTO PARA HALLAR LA ACELERACIÓN
         </label>
-        <MathComponent tex={String.raw`A =\frac{Vi - Vf}{T} = \frac{1-1}{1} = 0 m/s^2`} />
+        <MathJaxContext>
+
+          <MathJax>{" V = \\(\\frac{10}{4x} \\approx 2^{12}\\)"}</MathJax>
+        </MathJaxContext>
       </div>
     </div>
   )
