@@ -16,9 +16,8 @@ function App() {
       <DarkMode />
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route exact path='/' element={<Home/>} />
-          <Route path='/mru' element={<Mru/>}/> 
+        <Routes>         
+          <Route path='/' element={<Mru/>}/> 
           <Route path='/mrua' element={<Mrua/>}/> 
         </Routes>
       </BrowserRouter>
